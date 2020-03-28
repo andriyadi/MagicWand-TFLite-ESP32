@@ -4,9 +4,12 @@ Magic Wand using [ESPectro32](https://shop.makestro.com/product/espectro32-v2/) 
 
 As ESPectro32 is based on ESP32, this project should be easily adapted for other ESP32 board. You can change this to `#define ESPECTRO32 0` in `output_handler.cpp`. But you need to have some kind of display to let user know what is the predicted gesture. ESPectro32 has on-board LED Matrix to display the predicted gesture.
 
-## Demo Video
+## Demo
 
-The video is quite similar to this:
+Magic wand on **ESPectro32** board
+![ESPectro32 board](https://github.com/andriyadi/MagicWand-TFLite-ESP32/raw/master/docs/espectro32.jpg)
+
+Interaction demo video is quite similar to this:
 
 [![Demo video thumbnail](http://i3.ytimg.com/vi/Lfv3WJnYhX0/hqdefault.jpg)](https://www.youtube.com/watch?v=Lfv3WJnYhX0)
 
