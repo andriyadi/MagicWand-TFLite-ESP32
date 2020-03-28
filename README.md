@@ -15,8 +15,13 @@ The video is quite similar to this:
 * [PlatformIO](http://platformio.org/)
 * PlatformIO's [platform-espressif32](https://github.com/platformio/platform-espressif32). Should be installed automatically
 
+## Train
+You can train the Machine Learning model to recognize your own gesture, or even other gestures than Magic Wand. The model and  training code is [here](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/magic_wand/train).
+
+I'm thinking to create some guideline to do that training in [Azure Machine Learning](https://azure.microsoft.com/en-us/services/machine-learning/), let me find the time.
+
 ## Credit
 
-* [Magic Wand original sample code]([exercises/intro.md](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/magic_wand))
+* [Magic Wand original sample code](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/magic_wand)
 * Some code is inspired from [here](https://blog.boochow.com/article/m5stack-tflite-magic-wand.html)
 * [SparkFun_LSM6DS3_Arduino_Library](https://github.com/sparkfun/SparkFun_LSM6DS3_Arduino_Library). Need to include here, as its PlatformIO library is failed to compile.
