@@ -19,10 +19,12 @@ limitations under the License.
 
 #include "Arduino.h"
 
-#define ESPECTRO32    1
+#define BLINK_LED_ON_PROCESS  1 
+#define ESPECTRO32            1
 
 #if ESPECTRO32
 #include <ESPectro32_Board.h>
+#define LED_MATRIX_ROTATED    1
 #endif
 
 /*
@@ -54,7 +56,9 @@ void HandleOutput(tflite::ErrorReporter* error_reporter, int kind) {
   if (!is_initialized) {
     is_initialized = true;
 
+#if BLINK_LED_ON_PROCESS
     pinMode(LED_BUILTIN, OUTPUT);
+#endif
 
 #if ESPECTRO32
     ESPectro32.LedMatrix().clear();
@@ -67,9 +71,14 @@ void HandleOutput(tflite::ErrorReporter* error_reporter, int kind) {
     // ESPectro32.RgbLed().clear();
 
     //Rotate LED Matrix
+    #if LED_MATRIX_ROTATED
+    ESPectro32.LedMatrix().setRotation(2);
+    #endif
 #endif
 
   }
+
+#if BLINK_LED_ON_PROCESS  
   // Toggle the LED every time an inference is performed
   static int count = 0;
   ++count;
@@ -78,6 +87,7 @@ void HandleOutput(tflite::ErrorReporter* error_reporter, int kind) {
   } else {
     digitalWrite(LED_BUILTIN, LOW);
   }
+#endif
 
   // Print some ASCII art for each gesture
   if (kind == 0) {
